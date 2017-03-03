@@ -1,0 +1,7 @@
+{
+  "name": "gpx-stats",
+  "version": "0.0.1",
+  "dependencies": {
+    "gpx-parse": "^0.10.4"
+  }
+}
