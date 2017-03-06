@@ -83,3 +83,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Project data
+tracks
+
+# IDEA
+.idea
