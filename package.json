@@ -1,7 +1,16 @@
 {
   "name": "gpx-stats",
+  "author": { 
+    "name" : "Kyle Karpack",
+    "email" : "kylekarpack@gmail.com",
+    "url" : "https://kylekarpack.com"
+},
   "version": "0.0.1",
+  "license": "MIT",
   "dependencies": {
     "gpx-parse": "^0.10.4"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
