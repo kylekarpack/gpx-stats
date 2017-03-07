@@ -1,11 +1,9 @@
- /**
- * Created by Kyle Karpack on 12/9/2016.
- */
-
-
 import * as gpxParse from "gpx-parse";
- import Utils from "./util";
- import fs = require("fs");
+import Utils from "./util";
+import * as fs from "fs";
+
+// See http://gpxtruder.xyz/ for some ideas
+// https://plot.ly/nodejs/
 
 
  let stats = {
@@ -44,15 +42,15 @@ import * as gpxParse from "gpx-parse";
                      stats.totalElevation += waypoint.elevation - prev.elevation;
                  }
 
-                 stats.distance += Utils.distance(prev.lat, prev.lon, waypoint.lat, waypoint.lon);
+                 stats.distance += Utils.getDistance(prev.lat, prev.lon, waypoint.lat, waypoint.lon);
 
                  prev = waypoint;
              }
 
 
              const elevations = waypoints.map(el => el.elevation);
-             stats.netElevation += Math.max(...elevations) -
-                 Math.min(...waypoints.map(el => el.elevation));
+             
+             stats.netElevation += Math.max(...elevations) - Math.min(...waypoints.map(el => el.elevation));
 
 
              const times = waypoints.map(el => el.time);
@@ -62,7 +60,7 @@ import * as gpxParse from "gpx-parse";
              filesToGo--;
 
              if (!filesToGo) {
-                 console.warn(stats);
+                 console.log(stats);
              }
 
 
